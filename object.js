@@ -289,3 +289,99 @@
 //     }
 // }
 
+
+
+//Методы класса Object
+// let obj ={
+//     name:10,
+//     age:1,
+//     id:50
+// }
+// Object.keys() //Возвращает массив, который передает все ключи объекта
+// Object.values() //Возвращает массив, который передает все Значения Свойств объекта
+// Object.entries() //Возвращает массив, который передает пару КЛЮЧ-Значения Свойств объекта
+// let obj = {
+//     name:'Alex',
+//     age:21,
+//     salary:1500
+// }
+// console.log(Object.keys(obj))
+// console.log(Object.values(obj))
+// console.log(Object.entries(obj))
+//----------------------------------------------------------------------------------------
+//Object.assign() - возвращает объект, который передает аме мв-ва двух переданных объектов
+// let obj1 = {
+//     name:'Alex',
+//     age:21,
+//     salary:1500
+// }
+// let obj2 = {
+//     name:'Alex2',
+//     age:212,
+//     salary:15002
+// }
+// let obj = Object.assign(obj1,obj2)
+// console.log(obj)
+// console.log(obj1)
+// console.log(obj2)
+ //-------------------------------------------------------------------------------------------
+ //копирование объектов
+//  let user = {
+//     name:'Alex',
+//     age:21,
+//     salary:1500
+//  }
+//  let user_copy = Object.assign({},user)
+//  console.log(user)
+//  console.log(user_copy)
+ //----------------------------------------------------------------------------------------
+ // Задача 1.
+// Напишите аналог метода Object.keys, в функцию getKeys(obj). Функция должна вернуть массив:
+// Примечание: методами Object пользоваться нельзя
+// Пример: 
+// let obj = {
+//     name: 'Alex',
+//     salary: 1000,
+//     isJob: true
+// }
+// Результат: [ 'name', 'salary', 'isJob' ]
+// function getKeys(o){
+//     let m =[]
+//     for(i in o){
+//         m[m.length]=i
+//     }
+//     return(m)
+// }
+// console.log(getKeys(obj))
+//----------------------------------------------------------------------------------------------
+// Задача 2. 
+// Сделать аналог метода Object.entries(), сформировав функцию getEntries(obj)
+// Примечание: методами Object пользоваться нельзя
+// Результат:
+// [ [ 'name', 'Alex' ], [ 'salary', 1000 ], [ 'isJob', true ] ]
+// let obj = {
+//     name: 'Alex',
+//     salary: 1000,
+//     isJob: true
+// }
+// function getEntries(o){
+//         let m =[]
+//     for(i in o){
+//         m[m.length]= [i,o[i]]
+//     }
+//     return(m)
+// }
+// console.log(getEntries(obj))
+//-------------------------------------------------------------------------------------------
+// Заданы три объекта: 
+let user_11 = {id: 1}
+let user_12 = {username: 'user'}
+let user_2 = {
+    id: 1,
+    username: 'user'
+}
+// Задача: объедините user_11 и user_12 в один объект 
+// и сравните результат с объектом user_2. 
+// В качестве ответа необходимо получить булевый тип
+
+console.log(JSON.stringify(Object.assign(user_11,user_12))==JSON.stringify(user_2))
