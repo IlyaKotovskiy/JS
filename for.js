@@ -340,7 +340,7 @@
 
 
 // --------------------------------
-// метод split()
+// метод split() - разбивает (делит) строку на две или более подстроки в зависимости от разделителя.
 
 // let string = 'привет друг другалек'
 // console.log(string.split()) 
@@ -545,3 +545,66 @@
 // ]
 
 // console.log(data.findIndex(el => el.id == 1))
+
+
+// Задание 1
+// Найдите пользователся, id которого представляется в виде четного числа, а возраст менее 33
+// let users = [
+//     {id: 1, name: 'Alex', lastname: 'Folon', age: 24},
+//     {id: 2, name: 'Willyam', lastname: 'Maxwell', age: 33},
+//     {id: 3, name: 'Steven', lastname: 'Fersters', age: 35},
+//     {id: 4, name: 'Neena', lastname: 'Maxwell', age: 31},
+// ]
+
+// console.log(users.find(e => e.id % 2 == 0 && e.age < 33))
+
+
+// Задача 2
+// В программе задана переменная users, которая хранит в себе массив. 
+// Элементы данного массива являются объектами. 
+// Определите индекс элемента, значение свойства role которого содержит больше одного слова. 
+// Результат выведите в консоль разработчика.
+// Пример значений переменных:
+// users = [
+//     {login: "user1", role: "Admin"},
+//     {login: "user2", role: "State user"},
+//     {login: "user3", role: "Moderator"}
+// ]
+
+// console.log(users.findIndex(el => el.role.includes(' ')))
+
+// Пример результата:
+// 1
+
+
+// Задача 2.2
+// Определите наличие двух пробелов в поиске индекса элемента массива. 
+// Пример значений переменных:
+
+// users = [
+//     {login: "user1", role: "Admin test test"},
+//     {login: "user2", role: "State user"},
+//     {login: "user3", role: "Moderator"}
+// ]
+
+// console.log(users.findIndex(el => el.role.split(' ').length > 2))
+
+// Пример результата:
+// 0
+
+
+
+// ---------------------------
+// метод sort() - метод сортирующий указанный массив
+
+// let array = ['Киви', 'Арбуз', 'Яблоко', 'Мандарин', 'Банан']
+
+// console.log(array.sort())                 // - сортировка по возрастанию
+// console.log(array.sort().reverse())       // - сортировка по убыванию
+
+// Проблема с сортировкой чисел.
+// Подкапотно преобразовывает числовые типы в строку
+
+// array = [3, 6, 9, 1, 5, 10, 7]
+// console.log(array.sort())
+// console.log(array.sort().reverse())
