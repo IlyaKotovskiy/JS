@@ -595,7 +595,7 @@
 
 
 // ---------------------------
-// метод sort() - метод сортирующий указанный массив
+// метод sort() - метод сортирующий указанный массив. Принимает колбек
 
 // let array = ['Киви', 'Арбуз', 'Яблоко', 'Мандарин', 'Банан']
 
@@ -608,3 +608,63 @@
 // array = [3, 6, 9, 1, 5, 10, 7]
 // console.log(array.sort())
 // console.log(array.sort().reverse())
+
+// ---------------
+// Решение этой проблемы
+
+// Код операции
+// 1 - это currentElem > nextElem
+// -1 - это currentElem < nextElem
+// 0 - это currentElem = nextElem
+
+// Решение 1
+// array = [5, 4, 6, 3, 7, 2, 10, 8, 9, 1]
+
+// array.sort((currentElem, nextElem) => {
+//     if (currentElem > nextElem) return 1
+//     if (currentElem < nextElem) return -1
+//     if (currentElem = nextElem) return 0
+// })
+
+// console.log(array)
+
+
+// Решение 2
+// array = [5, 4, 6, 3, 7, 2, 10, 8, 9, 1]
+
+// array.sort((curEl, nextEl) => curEl - nextEl)      // - сортировка по возрастанию
+// array.sort((curEl, nextEl) => nextEl - curEl)      // - сортировка по убыванию
+
+
+// console.log(array)
+
+
+// ---------------------------------------------
+// Задача 1
+// Задан массив data. Выполните несколько заданий: 
+// 1) отсортируте массив по количеству товаров 
+// 2) отсортируйте массив по итоговой стоимости (вместе с количеством)
+// 3) отсортируйте массив по имени покупки (сделаем вместе)
+
+// let data = [
+//     {id : 2, goods: 'Самокат', count: 1, price: 3500},
+//     {id : 3, goods: 'Ролики', count: 15, price: 6000},
+//     {id : 5, goods: 'Скейтборд', count: 8, price: 999},
+//     {id : 4, goods: 'Ракетки', count: 30, price: 1000},
+//     {id : 1, goods: 'Велосипед', count: 5, price: 2000},
+// ]
+
+// data.sort((curEl, nextEl) => curEl.count - nextEl.count)  // - по кол-ву товаров
+// data.sort((curEl, nextEl) => curEl.count * curEl.price - nextEl.count * nextEl.price)  // - по итоговой стоимости
+// data.sort((curEl, nextEl) => (curEl.goods > nextEl.goods) ? 1 : (curEl.goods < nextEl.goods) ? -1 : 0)  // - сортировка по имени покупки
+
+
+// console.log(data)
+
+
+// Задача 2
+// Рандомная сортировка
+// Напишите процесс сортировки таким образом, чтобы она просиходила радномным образом
+let array = [1,2,3,4,5,6,7,8,9,10]
+
+console.log(array.sort(() => Math.random() - Math.random()))
