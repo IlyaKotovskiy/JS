@@ -741,15 +741,93 @@
 // 2) заменить занчения сво-ва name на ее длину (число)
 // 3) значение сво-ва quantity заменить на произведение значение id и quantity
 
-let goods = [
-    {id: 4, name: 'Скейтборд', quantity: 30},
-    {id: 4, name: 'Самокат', quantity: 15},
-    {id: 3, name: 'Велотренажер', quantity: 20},
-    {id: 3, name: 'Велосипед', quantity: 5},
-]
+// let goods = [
+//     {id: 4, name: 'Скейтборд', quantity: 30},
+//     {id: 4, name: 'Самокат', quantity: 15},
+//     {id: 3, name: 'Велотренажер', quantity: 20},
+//     {id: 3, name: 'Велосипед', quantity: 5},
+// ]
 
-console.log(goods.map(el => ({
-    id: el.id ** 2,
-    name: el.name.length,
-    quantity: el.quantity * el.id,
-})))
+// console.log(goods.map(el => ({
+//     id: el.id ** 2,
+//     name: el.name.length,
+//     quantity: el.quantity * el.id,
+// })))
+
+
+// Задача 3
+// Повторить метод map()
+
+// let a = [3,5,8]
+// function map2 (array, callback){
+//     let newArray = []
+//     for(el of array){
+//         newArray.push(callback(el))
+//     }
+//     return newArray
+// }
+
+// console.log(map2(a,el => el * 3))
+
+
+
+// -------------------
+// метод forEach() - задача метода просто сформировать цикл for одной строкой
+// метод ничего не возвращает
+
+// let a = [3,5,8]
+
+// a.forEach(el => console.log(el))
+
+
+// -------------------
+// метод reduce() - метод для формирования агрегационных вычислений. Работает слева направо
+
+
+// решение без reduce
+// let array = [1,2,3,4,5]
+
+// let sum = 0
+// for(el of array){
+//     sum += el
+// }
+
+// console.log(sum)
+
+// решение с reduce
+//  console.log(array.reduce((sum, elem) => sum + elem))
+
+
+// -------------------
+// метод reduceRight() - делает тоже самое что и обычный reduce(), но с права на лево
+
+
+
+// --------------------------------
+// Задача 1
+// Используя метод reduce решите ряд Задач
+// а) Посчитайте итоговую стоимость всех товаров
+// б) Посчитайте произведиение всех quantity 
+// в) Сконкатенируйте первые буквы всех товаров в единую строку
+// let goods = [
+//     {id: 4, name: 'Скейтборд', price: 3500, quantity: 30},
+//     {id: 4, name: 'Самокат', price: 1300, quantity: 15},
+//     {id: 3, name: 'Велотренажер', price: 999, quantity: 20},
+//     {id: 3, name: 'Велосипед', price: 5400, quantity: 5},
+// ]
+
+// console.log(goods.reduce((sum, elem) => sum + elem.price, 0), goods.reduce((um, el) => um * el.quantity, 1), goods.reduce((concat, el) => concat + el.name[0], ""))
+
+
+// Задача 2
+// Сложить все числа
+
+// let numbers = [
+//     [1,2,3],
+//     [4,5,6],
+//     [7,8,9]
+// ]
+
+
+// console.log(numbers.reduce((sum, elem) => sum + elem.reduce((sum, elem) => sum + elem), 0))
+
