@@ -1,4 +1,4 @@
-// Задание
+// Задание 1
 
 // Написать функционал по добавлению, изменению и удалению пользователей.
 // Данные должны храниться в массиве, данные о пользователе должны быть в виде объекта (id, имя, фамилия, возраст)
@@ -10,52 +10,186 @@
 
 // Все функции должны ссылаться на 1 массив users. 
 
-let users = [
-    { id: 1, name: 'Alex', lastname: 'Wilyam', age: 20 },
-    { id: 2, name: 'Steven', lastname: 'King', age: 34 }
-]
+// let users = [
+//     { id: 1, name: 'Alex', lastname: 'Wilyam', age: 20 },
+//     { id: 2, name: 'Steven', lastname: 'King', age: 34 }
+// ]
 // 1) Добавление новых данных о человеке в массив users
-console.log('1) addUser\nДобавление новых данных о человеке в массив users')
-function addUser(name, lastname, age){
-    users.push({
-        id: users.length + 1,
-        name: name,
-        lastname: lastname,
-        age: age
-    })
-    return users
-}
-console.log(addUser('Ilya', 'Kotovskiy', 17))
+// console.log('1) addUser\nДобавление новых данных о человеке в массив users')
+// function addUser(name, lastname, age) {
+//     users.push({
+//         id: users.length + 1,
+//         name: name,
+//         lastname: lastname,
+//         age: age
+//     })
+//     return users
+// }
+// console.log(addUser('Ilya', 'Kotovskiy', 17))
 
 // 2) Изменение данных о человеке в массиве users
-console.log('2) updateUser\nИзменение данных о человеке в массиве users')
-function updateUser(id, name, lastname, age){
-    for(el of users){
-        if (el.id == id){
-            el.id = id,
-            el.name = name,
-            el.lastname = lastname,
-            el.age = age
-        }
-    }
-    return users
-}
-console.log(updateUser(3, 'Michail', 'Cherbanov', 37))
+// console.log('2) updateUser\nИзменение данных о человеке в массиве users')
+// function updateUser(id, name, lastname, age) {
+//     for (el of users) {
+//         if (el.id == id) {
+//             el.id = id,
+//                 el.name = name,
+//                 el.lastname = lastname,
+//                 el.age = age
+//         }
+//     }
+//     return users
+// }
+// console.log(updateUser(3, 'Michail', 'Cherbanov', 37))
 
 // 3) Удаление данных о человеке в массиве users
-console.log('3) deleteUser\nУдаление данных о человеке в массиве users')
-function deleteUser(id){
-    for(el of users){
-        if(el.id == id){
-            users.splice(id - 1, 1)
-        }
-    }
-    return users
-}
-console.log(deleteUser(2))
+// console.log('3) deleteUser\nУдаление данных о человеке в массиве users')
+// function deleteUser(id) {
+//     for (el of users) {
+//         if (el.id == id) {
+//             users.splice(id - 1, 1)
+//         }
+//     }
+//     return users
+// }
+// console.log(deleteUser(2))
 
 
 // Примечание:
 // При добавлении пользователя id должен формироваться автоматически (в зависимости и количества пользователей). Например, очередная запись  должна иметь значение id = 3
 
 // Продемонстрируйте работу всех функции на примерах (примеры могут быть произвольными)
+
+
+// Задача 2
+
+// Решение всех задач необходимо скопировать (текст) и отправить на булгаков в соответствующей теме: 
+// Практическая работа по разделу 6 (ч2) используя формат кода. Задачу оформить и пронумеровать используя комментирование кода.
+
+// Тема практической работы: применение методов массива для решение задач.
+
+// Используя массив products, необходимо решить ряд задач:
+
+// 1) Отфильтруйте товары по условию, если их количество будет больше 10.
+// 2) Найдите значение элемента массива (товара), чья цена находится в диапазоне от 800 до 900 включительно.
+// 3) Отсортируйте данные товаров по цене (по убыванию)
+// 4) Посчитайте итоговую стоимость с учетом кол-во всех товаров в массиве. 
+// 5) Преобразуйте массив таким образом, чтобы изменить сво-во marks и получить итоговую сумму оценок. Пример для первой записи: 
+// {id: 1, title: ‘велосипед’, price: 45000, count: 3, marks_total: 15}
+// Итоговый результат отсортируйте по marks_total
+
+let products = [
+    {
+        id: 1,
+        title: 'велосипед',
+        price: 45000,
+        count: 3, // количество на складе
+        marks: [4, 3, 5, 3] // оценки товара от 4х покупателей
+    },
+    {
+        id: 2,
+        title: 'ролики',
+        price: 25000,
+        count: 5,
+        marks: [4, 3, 5, 5]
+    },
+    {
+        id: 3,
+        title: 'арбалет',
+        price: 1700,
+        count: 9,
+        marks: [3, 3, 4, 5]
+    },
+    {
+        id: 4,
+        title: 'коньки',
+        price: 4500,
+        count: 3,
+        marks: [4, 3, 4, 3]
+    },
+    {
+        id: 5,
+        title: 'ракетки',
+        price: 900,
+        count: 15,
+        marks: [5, 3, 5, 3]
+    },
+    {
+        id: 6,
+        title: 'штанги',
+        price: 14000,
+        count: 5,
+        marks: [3, 3, 3, 2]
+    },
+    {
+        id: 7,
+        title: 'стрелы',
+        price: 1200,
+        count: 55,
+        marks: [3, 2, 4, 5]
+    },
+    {
+        id: 8,
+        title: 'мячи',
+        price: 500,
+        count: 49,
+        marks: [5, 4, 4, 4]
+    },
+    {
+        id: 9,
+        title: 'сетка',
+        price: 5000,
+        count: 6,
+        marks: [4, 5, 2, 5]
+    },
+    {
+        id: 10,
+        title: 'гантели',
+        price: 3400,
+        count: 12,
+        marks: [3, 2, 4, 2]
+    },
+    {
+        id: 11,
+        title: 'маты',
+        price: 16500,
+        count: 7,
+        marks: [4, 4, 4, 5]
+    }
+]
+// 1) Сортировка товаров если товары больше 10
+let CountMore = products.filter(el => el.count > 10)
+
+// 2) Цена товара от 800 до 900
+let filPrice = products.filter(el => (el.price >= 800 && el.price <= 900))
+
+// 3) Сортировка цены по убыванию
+let priceDown = products.sort((curEl, nextEl) => nextEl.price - curEl.price)
+
+// 4) Посчитайте итоговую стоимость всех товаров в массиве.
+let totalPrice = products.reduce((sum, el) => sum + (el.price * el.count), 0)
+
+// 5) Преобразуйте массив таким образом, чтобы изменить сво-во marks и получить итоговую сумму оценок.
+// Итоговый результат отсортируйте по marks_total
+let marksTotal = products.map(el => ({
+    id: el.id,
+    title: el.title,
+    price: el.price,
+    count: el.count,
+    marks_total: el.marks.reduce((sum, el) => sum + el, 0)
+})).sort((curEl, nextEl) => curEl.marks_total - nextEl.marks_total)
+
+
+console.log(marksTotal)
+
+
+
+
+
+
+
+// Примечание к работе:
+// В заданиях необходимо применить методы массива. В случае, если на решение не будет хватать времени - можно решить используя цикл for и условный оператор if (оценка будет снижена).
+// В последних заданиях предусмотрено использование нескольких методов (решение можно описать одной строкой)
+// Решение можно представить в виде набора методов console.log({метод массива}), или же сохранить результат в отдельную переменную, например task_1 (предпочтительнее)
+
